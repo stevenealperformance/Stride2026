@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)file:///Users/steve_neal/Downloads/letter_to_rick_v3.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rick — Stride vs Xert vs the field</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Rick — Stride vs Xert vs the field_files/css2" rel="stylesheet">
+
+<style>
+:root{
+  --bg: #ffffff;
+  --ink: #0a0a0a;
+  --ink-soft: #2d2d2d;
+  --ink-muted: #666666;
+  --rule: #e0e0e0;
+  --rule-strong: #a8a8a8;
+  --accent: #0066cc;
+  --shade: #f7f7f7;
+  --warn: #b8400f;
+  --ok: #2d6a3f;
+  --amber: #8a5a00;
+
+  --sans: "IBM Plex Sans", -apple-system, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", "SF Mono", Menlo, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  padding: 40px 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page{
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header{
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 16px;
+  margin-bottom: 32px;
+}
+
+.header-meta{
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 4px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.header-meta .label{
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.header-meta .value strong{ font-weight: 600; }
+
+h2{
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin: 40px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+h2:first-of-type{ margin-top: 0; }
+
+h3{
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink);
+  margin: 24px 0 10px;
+  letter-spacing: 0.02em;
+}
+
+p{
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+
+p.greeting{
+  margin-bottom: 20px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+strong{ color: var(--ink); font-weight: 600; }
+
+/* ============================================================
+   Two-column comparison (Stride vs Xert)
+   ============================================================ */
+
+.compare{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 13px;
+  border: 1px solid var(--ink);
+}
+
+.compare th{
+  text-align: left;
+  padding: 10px 12px;
+  background: var(--ink);
+  color: white;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-right: 1px solid #333;
+}
+
+.compare th:last-child{ border-right: none; }
+.compare th:first-child{ width: 26%; }
+
+.compare td{
+  padding: 10px 12px;
+  border-top: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  vertical-align: top;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.compare td:last-child{ border-right: none; }
+
+.compare td:first-child{
+  font-weight: 600;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  background: var(--shade);
+}
+
+.compare tr:nth-child(even) td:not(:first-child){ background: #fafafa; }
+
+/* ============================================================
+   Landscape table — 5 platforms
+   ============================================================ */
+
+.landscape{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 12px;
+  border: 1px solid var(--ink);
+}
+
+.landscape th{
+  text-align: left;
+  padding: 8px 10px;
+  background: var(--ink);
+  color: white;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-right: 1px solid #333;
+  vertical-align: bottom;
+}
+
+.landscape th:last-child{ border-right: none; }
+.landscape th:first-child{ width: 18%; }
+
+.landscape td{
+  padding: 8px 10px;
+  border-top: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  vertical-align: top;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  font-size: 11.5px;
+}
+
+.landscape td:last-child{ border-right: none; }
+
+.landscape td:first-child{
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--shade);
+}
+
+.landscape .our-row td{ background: #fff4e8; }
+.landscape .our-row td:first-child{ background: #ffe4c7; }
+
+.landscape .subhead{
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--ink-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Tags
+   ============================================================ */
+
+.tag{
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  padding: 1px 6px;
+  letter-spacing: 0.04em;
+  margin-left: 4px;
+  vertical-align: 1px;
+  border-radius: 2px;
+}
+.tag.plus{ background: #e8f4ea; color: var(--ok); }
+.tag.minus{ background: #fce8dc; color: var(--warn); }
+.tag.neutral{ background: #fff1cc; color: var(--amber); }
+
+/* ============================================================
+   Lists
+   ============================================================ */
+
+ul{
+  list-style: none;
+  margin: 8px 0 18px;
+  padding: 0;
+}
+
+ul li{
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+ul li::before{
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--ink-muted);
+  font-family: var(--mono);
+}
+
+ol.reasoning{
+  list-style: none;
+  counter-reset: item;
+  margin: 8px 0 18px;
+  padding: 0;
+}
+
+ol.reasoning > li{
+  counter-increment: item;
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+ol.reasoning > li::before{
+  content: counter(item, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  padding-top: 1px;
+}
+
+/* ============================================================
+   Positioning quadrant (simple ASCII-style chart)
+   ============================================================ */
+
+.quadrant{
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid var(--rule-strong);
+  background: var(--shade);
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  overflow-x: auto;
+}
+
+.quadrant-title{
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 12px;
+}
+
+.quadrant pre{
+  font-family: var(--mono);
+  font-size: 10.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  white-space: pre;
+}
+
+.quadrant-note{
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 12px;
+  font-style: italic;
+}
+
+/* ============================================================
+   Question box
+   ============================================================ */
+
+.question-box{
+  border: 1px solid var(--ink);
+  padding: 16px 20px;
+  margin: 20px 0;
+  background: var(--shade);
+}
+
+.question-box .q-label{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 6px;
+}
+
+.question-box p{
+  font-size: 15px;
+  color: var(--ink);
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   Sign off
+   ============================================================ */
+
+.signoff{
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+
+.signoff p{ margin-bottom: 16px; }
+
+.signoff .name{
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.signoff .ps{
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule-strong);
+  line-height: 1.55;
+}
+
+.signoff .ps strong{ color: var(--ink); font-weight: 600; }
+
+/* ============================================================
+   Action bar
+   ============================================================ */
+
+.action-bar{
+  max-width: 780px;
+  margin: 0 auto 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.action-bar .status{
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  margin-right: auto;
+}
+
+.btn{
+  padding: 6px 12px;
+  background: white;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.btn:hover{ background: var(--ink); color: white; }
+.btn.copied{ background: var(--ok); border-color: var(--ok); color: white; }
+
+/* Responsive */
+@media (max-width: 720px){
+  body{ padding: 20px 12px; }
+  .compare, .landscape{ font-size: 11px; }
+  .compare th, .compare td, .landscape th, .landscape td{ padding: 6px 8px; }
+  .quadrant pre{ font-size: 9px; }
+}
+
+/* Print */
+@media print{
+  @page{ margin: 14mm; size: Letter; }
+  body{ padding: 0; }
+  .action-bar{ display: none !important; }
+  .compare, .landscape, .question-box, .quadrant, ul, ol{ page-break-inside: avoid; }
+  h2{ page-break-after: avoid; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="action-bar">
+  <div class="status">Draft · Personal</div>
+  <button class="btn" id="copyAll">Copy text</button>
+  <button class="btn" onclick="window.print()">Print / PDF</button>
+</div>
+
+<div class="page" id="content">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-meta">
+      <div class="label">To:</div>
+      <div class="value"><strong>Rick Landry</strong></div>
+      <div class="label">From:</div>
+      <div class="value"><strong>Steve Neal</strong></div>
+      <div class="label">Date:</div>
+      <div class="value">April 2026</div>
+      <div class="label">Re:</div>
+      <div class="value">Two offers, the landscape they sit in, and the numbers — want your read</div>
+    </div>
+  </div>
+
+  <!-- Opening -->
+  <p class="greeting">Rick,</p>
+
+  <p>
+    Hope the bike’s treating you well this spring. Wanted your honest read on something before I pull the trigger — you’re the one person I know who’s watched this exact pattern play out at scale, and I don’t want to convince myself into the wrong call.
+  </p>
+
+  <p>
+    I’ve got two real offers. Both cycling software. I’m going to lay them out three ways because I know that’s how you’ll read it fastest: <strong>the two options head-to-head</strong>, then <strong>both against the broader field</strong>, then <strong>what the money actually looks like under different outcomes</strong>.
+  </p>
+
+  <!-- The head-to-head -->
+  <h2>1. Stride vs Xert — head to head</h2>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>Dimension</th>
+        <th>Stride <span class="tag minus">risk</span></th>
+        <th>Xert <span class="tag plus">safe</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Location</td>
+        <td>London, UK</td>
+        <td>Toronto, CA</td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td>2 years</td>
+        <td>12 years</td>
+      </tr>
+      <tr>
+        <td>Funding</td>
+        <td>Angel round, reportedly incl. Cavendish</td>
+        <td>Bootstrapped, no outside capital</td>
+      </tr>
+      <tr>
+        <td>Revenue</td>
+        <td>Early / unproven</td>
+        <td>Stable, modest (est. under $1M)</td>
+      </tr>
+      <tr>
+        <td>Coach product</td>
+        <td>On roadmap, not built</td>
+        <td>Exists, underused, weak UX</td>
+      </tr>
+      <tr>
+        <td>My role</td>
+        <td>Own coach-&amp;-athlete module end to end</td>
+        <td>Grow coach tier, evolve workflows</td>
+      </tr>
+      <tr>
+        <td>Cash</td>
+        <td>£4,500/mo (~CAD $7,800)</td>
+        <td>CAD $3,000/mo + 15% of new coach-tier MRR</td>
+      </tr>
+      <tr>
+        <td>Equity</td>
+        <td>3% + up to 1% on milestones</td>
+        <td>1% (or drop it)</td>
+      </tr>
+      <tr>
+        <td>Founder openness to UX work</td>
+        <td>Publicly admit they haven’t figured it out</td>
+        <td>Believes UX isn’t the problem. Math is.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- The landscape -->
+  <h2>2. Where they sit in the broader field</h2>
+
+  <p>
+    This is the part I found most useful when I stepped back. I’ve been so close to both that I’d lost perspective on the market they’re actually competing in.
+  </p>
+
+  <table class="landscape">
+    <thead>
+      <tr>
+        <th>Platform</th>
+        <th>Subs <div class="subhead">est.</div></th>
+        <th>Revenue <div class="subhead">est.</div></th>
+        <th>Focus</th>
+        <th>Coach story</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TrainingPeaks</td>
+        <td>~500k paid</td>
+        <td>$15–50M/yr</td>
+        <td>Coach-first log &amp; plan</td>
+        <td>Industry standard. 35+ national federations. Hated but unavoidable.</td>
+      </tr>
+      <tr>
+        <td>Zwift</td>
+        <td>~800k–1M paid</td>
+        <td>$100M+/yr</td>
+        <td>Indoor virtual riding</td>
+        <td>Not a coach product. Massive athlete reach.</td>
+      </tr>
+      <tr>
+        <td>TrainerRoad</td>
+        <td>&gt;100k paid (est.)</td>
+        <td>$20M+/yr (est.)</td>
+        <td>Structured AI training</td>
+        <td>No real coach side. Bootstrapped, profitable.</td>
+      </tr>
+      <tr class="our-row">
+        <td>Stride <span class="tag neutral">offer</span></td>
+        <td>Low thousands</td>
+        <td>Dormant → early</td>
+        <td>AI training + race analysis</td>
+        <td>Not built yet. That’s the job.</td>
+      </tr>
+      <tr class="our-row">
+        <td>Xert <span class="tag neutral">offer</span></td>
+        <td>Est. 5–15k paid</td>
+        <td>Under $1M/yr</td>
+        <td>Power modelling</td>
+        <td>Built, underused. UX is the blocker.</td>
+      </tr>
+      <tr>
+        <td>WKO5 (Peaksware)</td>
+        <td>Niche, serious coaches</td>
+        <td>Bundled w/ TP</td>
+        <td>Deep desktop analysis</td>
+        <td>Analysis, not delivery.</td>
+      </tr>
+      <tr>
+        <td>Intervals.icu</td>
+        <td>Large free base</td>
+        <td>Donations-funded</td>
+        <td>Open-source analysis</td>
+        <td>Free competitor sucking oxygen from everyone above.</td>
+      </tr>
+      <tr>
+        <td>Coachbox, FasCat, others</td>
+        <td>Niche</td>
+        <td>Small</td>
+        <td>Coach-first startups</td>
+        <td>All fighting for the same gap — the one Stride hired me to own.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>The important fact hidden in that table:</strong> nobody has cracked the coach experience. TrainingPeaks hasn’t changed in ten years and coaches openly complain about it. Zwift and TrainerRoad don’t even pretend to serve coaches. Intervals.icu is free but has zero coach workflow. The newcomers (Coachbox, FasCat) are all aiming at exactly the gap I’d be working in at Stride. This is a real market opening, not something I’m imagining.
+  </p>
+
+  <p>
+    Xert could have owned that gap years ago. It didn’t, and Armando’s relationship to UX is the reason.
+  </p>
+
+  <!-- Positioning map -->
+  <div class="quadrant">
+    <div class="quadrant-title">Rough positioning: coach focus vs. UX quality</div>
+<pre>       COACH FOCUS (strong)
+              ▲
+              │
+  TrainingPks │  ← big but stale
+    WKO5      │
+              │         Coachbox
+              │         FasCat      ← chasing the gap
+    Xert  ────┼──────────────────────── UX (strong) →
+  (weak UX)   │                         Stride (planned)
+              │
+              │  TrainerRoad
+              │  Intervals.icu
+              │  Zwift
+              ▼
+       COACH FOCUS (weak)
+</pre>
+    <div class="quadrant-note">The top-right quadrant is empty. That’s where Stride is trying to go. That’s where Xert could have gone and didn’t.</div>
+  </div>
+
+  <!-- Money -->
+  <h2>3. What the money actually looks like</h2>
+
+  <p>
+    Three scenarios over three years. Assumes the Stride offer at £4,500/mo + 3% equity + 1% milestone kicker, and the Xert offer at CAD $3,000/mo + 15% of net new coach-tier MRR + 1% equity.
+  </p>
+
+  <h3>Base case: both companies grow modestly, nothing dramatic</h3>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>Over 3 years</th>
+        <th>Stride</th>
+        <th>Xert</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cash earned</td>
+        <td>~CAD $280k (£162k)</td>
+        <td>~CAD $108k + rev share</td>
+      </tr>
+      <tr>
+        <td>Rev share</td>
+        <td>—</td>
+        <td>~CAD $30–90k (if coach tier grows 2–5×)</td>
+      </tr>
+      <tr>
+        <td>Equity value</td>
+        <td>Paper: depends on raise. Realistically zero in 3 yrs.</td>
+        <td>Paper: zero unless acquired. No acquirer on horizon.</td>
+      </tr>
+      <tr>
+        <td>Total realised</td>
+        <td><strong>~CAD $280k</strong></td>
+        <td><strong>~CAD $140–200k</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Upside: Stride raises a proper seed, Xert grows coach tier</h3>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>Over 3 years</th>
+        <th>Stride</th>
+        <th>Xert</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cash earned</td>
+        <td>~CAD $280k + likely stipend bump</td>
+        <td>~CAD $108k</td>
+      </tr>
+      <tr>
+        <td>Rev share</td>
+        <td>—</td>
+        <td>~CAD $150–250k (coach tier ∼10× growth)</td>
+      </tr>
+      <tr>
+        <td>Equity value</td>
+        <td>4% of ~£20M post-money ≈ CAD $1.4M on paper, fully vested ~50%</td>
+        <td>1% of ~CAD $5M (if anyone values it) ≈ CAD $50k</td>
+      </tr>
+      <tr>
+        <td>Total realised (incl. paper)</td>
+        <td><strong>~CAD $1M</strong></td>
+        <td><strong>~CAD $450–500k</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Downside: Stride fails, Xert continues as-is</h3>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>Over 3 years</th>
+        <th>Stride</th>
+        <th>Xert</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cash earned</td>
+        <td>~CAD $100–280k (dep. on when it folds)</td>
+        <td>~CAD $108k</td>
+      </tr>
+      <tr>
+        <td>Rev share</td>
+        <td>—</td>
+        <td>~CAD $10–40k (flat coach tier)</td>
+      </tr>
+      <tr>
+        <td>Equity value</td>
+        <td>Zero</td>
+        <td>Zero</td>
+      </tr>
+      <tr>
+        <td>Total realised</td>
+        <td><strong>~CAD $100–280k</strong></td>
+        <td><strong>~CAD $120–150k</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>What the numbers actually say:</strong> Stride’s cash is meaningfully better in almost every scenario, because the stipend is bigger. Xert’s floor is slightly lower but safer. The <em>only</em> scenario where Xert wins financially is if the coach tier grows dramatically — and that requires Armando to let me rebuild the UX, which is exactly the thing I don’t think he’ll do.
+  </p>
+
+  <p>
+    So the “safe” choice isn’t actually safer. It’s lower-variance but also lower-expected-value. The equity upside at Stride is a long-shot lottery ticket, but the base cash is already the better number.
+  </p>
+
+  <!-- Where I'm leaning -->
+  <h2>4. How I’m leaning, and why</h2>
+
+  <ol class="reasoning">
+    <li>
+      <strong>The market gap is real and it’s the one Stride is aimed at.</strong> The top-right of that quadrant is empty for a reason, and several people are racing for it. Stride has the best shot of the current candidates because of Dowsett’s credibility and Barlow’s willingness to build for coaches.
+    </li>
+    <li>
+      <strong>Xert’s failure mode is the one you’ve seen before.</strong> Technically superior product, founder who can’t see that the math isn’t the problem anymore, product slowly loses relevance to things that feel better in users’ hands. Twelve years of the same pattern; it won’t flip because I write a good memo.
+    </li>
+    <li>
+      <strong>Cash isn’t a tie.</strong> Stride pays me ~2.5× more in base cash. I was prepared to give that up for the safer bet. I don’t actually need to.
+    </li>
+    <li>
+      <strong>Equity asymmetry favours Stride.</strong> Xert equity is worth roughly what Armando sells it for, and he won’t sell. Stride equity has a real chance of being worth something if a seed round lands.
+    </li>
+    <li>
+      <strong>Time is the real cost.</strong> I have one or two more chapters of this kind of work left at the level I operate. Spending one trying to convince a founder UX matters is the worst possible use of that.
+    </li>
+  </ol>
+
+  <!-- The question -->
+  <div class="question-box">
+    <div class="q-label">The question</div>
+    <p>
+      Am I picking the harder road for the right reasons, or am I romanticising the startup because it flatters me to be asked? That’s what I want your read on.
+    </p>
+  </div>
+
+  <p>
+    Not looking for an answer. Looking for the part of my thinking I’m missing. You’ve watched smart people make this call well and badly, and I’d rather hear it from you now than learn it the expensive way in eighteen months.
+  </p>
+
+  <!-- Sign off -->
+  <div class="signoff">
+    <p>Call or email whenever suits. No rush — I want to think properly, not fast.</p>
+    <div class="name">Steve</div>
+    <div class="ps">
+      <strong>PS.</strong> We should get a ride in when the valleys open up. Been too long.
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.getElementById('copyAll').addEventListener('click', function(){
+    const el = document.getElementById('content');
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    try {
+      document.execCommand('copy');
+      this.textContent = 'Copied';
+      this.classList.add('copied');
+      setTimeout(() => {
+        this.textContent = 'Copy text';
+        this.classList.remove('copied');
+      }, 1800);
+    } catch(e) {}
+    sel.removeAllRanges();
+  });
+</script>
+
+
+
+</body></html>
